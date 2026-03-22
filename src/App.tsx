@@ -583,7 +583,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-zinc-400">Ligne directe</p>
-                  <a href="tel:+33000000000" className="text-xl font-semibold hover:text-primary transition-colors">+33 0 00 00 00 00</a>
+                  <a href="tel:+237622186389" className="text-xl font-semibold hover:text-primary transition-colors">+237 622 18 63 89</a>
                 </div>
               </motion.div>
               
@@ -596,7 +596,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-zinc-400">WhatsApp</p>
-                  <a href="https://wa.me/33000000000" target="_blank" rel="noopener noreferrer" className="text-xl font-semibold hover:text-accent transition-colors">Discuter sur WhatsApp</a>
+                  <a href="https://wa.me/237622186389" target="_blank" rel="noopener noreferrer" className="text-xl font-semibold hover:text-accent transition-colors">Discuter sur WhatsApp</a>
                 </div>
               </motion.div>
             </div>
