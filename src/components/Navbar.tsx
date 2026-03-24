@@ -25,21 +25,21 @@ const Navbar = ({ isDark, toggleTheme }: { isDark: boolean; toggleTheme: () => v
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50 glass rounded-2xl shadow-2xl shadow-black/5 dark:shadow-white/5">
       <motion.div 
-        className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary origin-left"
+        className="absolute bottom-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"
         style={{ scaleX }}
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-6">
         <div className="flex justify-between h-16 items-center">
           <Link to="/" className="flex-shrink-0 flex items-center">
-            <span className="text-2xl font-bold text-primary">semane<span className="text-secondary dark:text-accent">.</span></span>
+            <span className="text-2xl font-bold text-primary font-display tracking-tight">semane<span className="text-secondary dark:text-accent">.</span></span>
           </Link>
           
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {!isHomePage && (
-              <Link to="/" className="text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors font-medium flex items-center mr-4">
-                <ArrowLeft size={18} className="mr-2" /> Accueil
+              <Link to="/" className="text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors font-bold flex items-center mr-4 text-sm uppercase tracking-wider">
+                <ArrowLeft size={16} className="mr-2" /> Accueil
               </Link>
             )}
             {isHomePage && navLinks.map((link, i) => (
@@ -49,19 +49,20 @@ const Navbar = ({ isDark, toggleTheme }: { isDark: boolean; toggleTheme: () => v
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors font-medium relative group"
+                className="text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors font-bold text-sm uppercase tracking-widest relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </motion.a>
             ))}
+            <div className="h-6 w-[1px] bg-zinc-200 dark:bg-zinc-800 mx-2" />
             <motion.button 
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.1, rotate: 15 }}
               whileTap={{ scale: 0.9 }}
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
+              className="p-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
             >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </motion.button>
           </div>
 

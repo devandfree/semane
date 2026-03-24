@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -5,13 +6,33 @@
   --color-secondary: #030084;
   --color-accent: #10b981;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
 }
 
 @variant dark (&:where(.dark, .dark *));
 
 @layer base {
   body {
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-300 antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 dark:bg-zinc-900/10 backdrop-blur-xl border border-white/20 dark:border-white/10;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary dark:to-accent;
+  }
+
+  .bg-grid {
+    background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  .dark .bg-grid {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
   }
 }
 

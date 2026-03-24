@@ -37,7 +37,8 @@ const staggerContainer = {
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-32 pb-20 px-4 overflow-hidden">
+    <section id="home" className="pt-32 pb-20 px-4 overflow-hidden relative">
+      <div className="absolute inset-0 bg-grid -z-10" />
       <div className="max-w-7xl mx-auto relative">
         {/* Background Decorative Elements */}
         <motion.div 
@@ -47,7 +48,7 @@ const Hero = () => {
             opacity: [0.1, 0.2, 0.1]
           }}
           transition={{ duration: 10, repeat: Infinity }}
-          className="absolute -top-20 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl -z-10"
+          className="absolute -top-20 -left-20 w-64 h-64 bg-primary/30 rounded-full blur-[100px] -z-10"
         />
         <motion.div 
           animate={{ 
@@ -56,38 +57,44 @@ const Hero = () => {
             opacity: [0.1, 0.15, 0.1]
           }}
           transition={{ duration: 12, repeat: Infinity, delay: 1 }}
-          className="absolute -bottom-20 -right-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl -z-10"
+          className="absolute -bottom-20 -right-20 w-96 h-96 bg-secondary/30 rounded-full blur-[100px] -z-10"
         />
 
         <div className="flex flex-col items-center text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ 
               type: "spring",
               stiffness: 260,
               damping: 20 
             }}
-            className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"
+            className="inline-flex items-center px-4 py-1.5 rounded-full glass text-primary text-sm font-medium mb-8 shadow-xl shadow-primary/5"
           >
-            <Zap size={14} className="mr-2" />
+            <motion.div
+              animate={{ rotate: [0, 15, -15, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="mr-2"
+            >
+              <Zap size={14} fill="currentColor" />
+            </motion.div>
             Product Builder
           </motion.div>
           
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-zinc-900 dark:text-white mb-8 font-display leading-[0.9]"
           >
-            Transformez vos idées en produits réels, <span className="text-primary">10x plus vite.</span>
+            Transformez vos idées en produits <span className="text-gradient">10x plus vite.</span>
           </motion.h1>
           
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="max-w-2xl text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mb-10 leading-relaxed"
+            className="max-w-2xl text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mb-12 leading-relaxed"
           >
             J'aide les PME et Startups à lancer leurs solutions web en un temps record grâce à la puissance du No-Code et de l'IA.
           </motion.p>
@@ -96,13 +103,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-6"
           >
             <motion.a 
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               href="#projects" 
-              className="px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
+              className="px-10 py-4 bg-primary text-white rounded-2xl font-bold hover:bg-primary/90 transition-all shadow-2xl shadow-primary/20 text-lg"
             >
               Voir mes réalisations
             </motion.a>
@@ -110,7 +117,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               href="#contact" 
-              className="px-8 py-4 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white rounded-xl font-semibold hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-all"
+              className="px-10 py-4 glass text-zinc-900 dark:text-white rounded-2xl font-bold hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all text-lg"
             >
               Me contacter
             </motion.a>
@@ -123,16 +130,16 @@ const Hero = () => {
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 bg-zinc-50 dark:bg-zinc-900/50 px-4">
+    <section id="services" className="py-32 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">Mes Services</h2>
-          <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 font-display">Mes Services</h2>
+          <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto text-lg">
             Une approche agile pour transformer vos idées en produits numériques concrets.
           </p>
         </motion.div>
@@ -142,20 +149,22 @@ const Services = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-6 gap-6"
         >
           {SERVICES.map((service, index) => (
             <motion.div
               key={service.title}
               variants={fadeInUp}
-              whileHover={{ y: -10 }}
-              className="p-8 rounded-2xl bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 hover:border-primary dark:hover:border-primary transition-all group shadow-sm hover:shadow-xl"
+              whileHover={{ y: -8 }}
+              className={`p-10 rounded-3xl glass hover:border-primary/50 transition-all group shadow-sm hover:shadow-2xl flex flex-col ${
+                index === 0 ? 'md:col-span-4' : index === 1 ? 'md:col-span-2' : 'md:col-span-3'
+              }`}
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-4">{service.title}</h3>
-              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4 font-display">{service.title}</h3>
+              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-lg">
                 {service.description}
               </p>
             </motion.div>
@@ -171,16 +180,16 @@ const Projects = () => {
   const featuredProjects = PROJECTS.slice(0, 3);
 
   return (
-    <section id="projects" className="py-20 bg-zinc-50 dark:bg-zinc-900/50 px-4">
+    <section id="projects" className="py-32 px-4 relative">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">Mes Réalisations</h2>
-          <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-6 font-display">Mes Réalisations</h2>
+          <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto text-lg">
             Découvrez quelques-uns des projets que j'ai réalisés récemment.
           </p>
         </motion.div>
@@ -196,31 +205,31 @@ const Projects = () => {
             <motion.div
               key={project.title}
               variants={fadeInUp}
-              whileHover={{ y: -10 }}
-              className="flex flex-col h-full rounded-2xl overflow-hidden bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 shadow-sm hover:shadow-xl transition-all"
+              whileHover={{ y: -12 }}
+              className="flex flex-col h-full rounded-3xl overflow-hidden glass hover:border-primary/50 transition-all duration-500 group shadow-lg hover:shadow-2xl"
             >
-              <div className="p-8 flex-grow">
-                <div className="flex flex-wrap gap-2 mb-4">
+              <div className="p-10 flex-grow">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map(tag => (
-                    <span key={tag} className="px-2 py-1 rounded-md bg-zinc-100 dark:bg-zinc-700 text-zinc-600 dark:text-zinc-300 text-xs font-medium">
+                    <span key={tag} className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">{project.title}</h3>
-                <p className="text-zinc-600 dark:text-zinc-400 mb-6">
+                <h3 className="text-3xl font-bold text-zinc-900 dark:text-white mb-6 font-display group-hover:text-primary transition-colors">{project.title}</h3>
+                <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-lg leading-relaxed">
                   {project.description}
                 </p>
               </div>
-              <div className="p-8 pt-0 mt-auto">
+              <div className="p-10 pt-0 mt-auto">
                 <motion.a 
-                  whileHover={{ x: 5 }}
+                  whileHover={{ x: 8 }}
                   href={project.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-primary font-semibold hover:underline"
+                  className="inline-flex items-center text-primary font-bold text-lg group-hover:underline decoration-2 underline-offset-8"
                 >
-                  Voir le projet <ExternalLink size={16} className="ml-2" />
+                  Voir le projet <ExternalLink size={20} className="ml-2" />
                 </motion.a>
               </div>
             </motion.div>
@@ -231,13 +240,13 @@ const Projects = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-20 text-center"
         >
           <Link 
             to="/projects"
-            className="inline-flex items-center px-8 py-4 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white rounded-xl font-semibold hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-all border border-zinc-200 dark:border-zinc-700"
+            className="inline-flex items-center px-10 py-5 glass text-zinc-900 dark:text-white rounded-2xl font-bold hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all text-lg"
           >
-            Voir tous mes projets <ExternalLink size={20} className="ml-2" />
+            Voir tous mes projets <ExternalLink size={22} className="ml-2" />
           </Link>
         </motion.div>
       </div>
@@ -311,25 +320,28 @@ const Process = () => {
 
 const TechStack = () => {
   const tools = [
+    "Lovable", "Bolt", "v0", "Google AI Studio", "Tailwind CSS", "React", "Framer Motion", "Lucide",
     "Lovable", "Bolt", "v0", "Google AI Studio", "Tailwind CSS", "React", "Framer Motion", "Lucide"
   ];
 
   return (
-    <section className="py-12 border-y border-zinc-200 dark:border-zinc-800 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
-        <p className="text-sm font-semibold uppercase tracking-widest text-zinc-400">Ma Stack Technique</p>
+    <section className="py-16 border-y border-zinc-200 dark:border-zinc-800 overflow-hidden bg-white dark:bg-zinc-950">
+      <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
+        <p className="text-xs font-bold uppercase tracking-[0.3em] text-zinc-400">Ma Stack Technique</p>
       </div>
-      <motion.div 
-        animate={{ x: [0, -100, 0] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="flex flex-nowrap justify-center gap-8 md:gap-16 px-4 whitespace-nowrap"
-      >
-        {tools.map((tool) => (
-          <span key={tool} className="text-xl md:text-2xl font-bold text-zinc-300 dark:text-zinc-700 hover:text-primary transition-colors cursor-default">
-            {tool}
-          </span>
-        ))}
-      </motion.div>
+      <div className="relative flex overflow-x-hidden">
+        <motion.div 
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="flex whitespace-nowrap gap-16 md:gap-32 items-center py-4"
+        >
+          {tools.map((tool, i) => (
+            <span key={`${tool}-${i}`} className="text-2xl md:text-4xl font-bold text-zinc-300 dark:text-zinc-800 hover:text-primary transition-colors cursor-default font-display">
+              {tool}
+            </span>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 };
