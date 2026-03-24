@@ -102,7 +102,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-zinc-900 dark:text-white mb-8 font-display leading-[0.9]"
           >
-            Transformez vos idées en produits <span className="text-gradient">10x plus vite.</span>
+            Transformez vos idées en <span className="text-gradient">réalités rentables.</span>
           </motion.h1>
           
           <motion.p 
@@ -111,7 +111,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="max-w-2xl text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mb-12 leading-relaxed"
           >
-            J'aide les PME et Startups à lancer leurs solutions web en un temps record grâce à la puissance du No-Code et de l'IA.
+            Expert Product Builder : je combine No-Code et IA pour lancer vos produits digitaux en un temps record.
           </motion.p>
           
           <motion.div 
@@ -134,7 +134,7 @@ const Hero = () => {
               href="#contact" 
               className="px-10 py-4 glass text-zinc-900 dark:text-white rounded-2xl font-bold hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all text-lg"
             >
-              Me contacter
+              Lancer mon projet
             </motion.a>
           </motion.div>
         </div>
@@ -273,17 +273,17 @@ const Process = () => {
   const steps = [
     {
       title: "1. Stratégie & Design",
-      description: "On définit ensemble vos objectifs, votre cible et l'architecture de votre solution.",
+      description: "On définit ensemble vos objectifs business pour concevoir une solution qui convertit réellement.",
       icon: <Search className="w-6 h-6" />
     },
     {
       title: "2. Build (No-Code & IA)",
-      description: "Je développe votre produit en utilisant les meilleurs outils pour une rapidité maximale.",
+      description: "Je développe votre produit en utilisant les meilleurs outils pour une mise sur le marché immédiate.",
       icon: <Cpu className="w-6 h-6" />
     },
     {
-      title: "3. Lancement & Itération",
-      description: "Mise en ligne, tests utilisateurs et ajustements pour garantir un produit parfait.",
+      title: "3. Lancement & Scale",
+      description: "Mise en ligne, tests utilisateurs et optimisation continue pour garantir votre croissance.",
       icon: <Rocket className="w-6 h-6" />
     }
   ];
@@ -297,9 +297,9 @@ const Process = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">Ma Méthodologie</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-4">Votre Succès en 3 Étapes</h2>
           <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Comment je parviens à livrer des produits de qualité 10x plus vite.
+            Une méthodologie éprouvée pour transformer vos ambitions en produits digitaux performants.
           </p>
         </motion.div>
 
@@ -365,19 +365,19 @@ const FAQ = () => {
   const faqs = [
     {
       question: "C'est quoi un Product Builder ?",
-      answer: "Un Product Builder est un profil hybride entre le développeur et le product manager. J'utilise des outils No-Code et l'IA pour concevoir, designer et lancer des produits numériques complets de manière ultra-rapide."
+      answer: "Un Product Builder est un expert hybride qui combine vision produit et maîtrise technique. J'utilise le No-Code et l'IA pour concevoir et lancer des solutions complètes en un temps record, là où une agence traditionnelle mettrait des mois."
     },
     {
       question: "Pourquoi choisir le No-Code plutôt que le code traditionnel ?",
-      answer: "Pour la vitesse et le coût. Le No-Code permet de lancer un produit en quelques jours au lieu de quelques mois, tout en gardant une grande flexibilité pour les évolutions futures."
+      answer: "Pour gagner un avantage compétitif majeur : la vitesse. Le No-Code permet de tester votre marché 10x plus vite et à moindre coût, tout en offrant une scalabilité robuste pour accompagner votre croissance."
     },
     {
-      question: "Est-ce que je serai propriétaire de mon site ?",
-      answer: "Absolument. Une fois le projet terminé, je vous transfère la propriété totale de tous les outils et comptes utilisés."
+      question: "Est-ce que je serai propriétaire de mon produit ?",
+      answer: "Absolument. Une fois le projet livré, je vous transfère la propriété totale de tous les comptes et outils. Vous êtes 100% autonome et maître de votre technologie."
     },
     {
-      question: "Proposez-vous de la maintenance ?",
-      answer: "Oui, je propose des forfaits d'accompagnement pour faire évoluer votre produit après son lancement initial."
+      question: "Proposez-vous un accompagnement après le lancement ?",
+      answer: "Oui, je ne vous laisse pas seul. Je propose des forfaits de maintenance et d'évolution pour ajuster votre produit en fonction des retours de vos utilisateurs et garantir sa pérennité."
     }
   ];
 
@@ -448,9 +448,9 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Prêt à lancer votre projet ?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Donnez vie à votre vision dès aujourd'hui</h2>
             <p className="text-zinc-300 text-lg mb-10">
-              Vous avez une idée de site web ou d'application ? Contactez-moi directement pour en discuter.
+              Vous avez une idée de site web ou d'application ? Ne la laissez pas dormir. Contactez-moi directement pour en discuter.
             </p>
             
             <div className="space-y-6">

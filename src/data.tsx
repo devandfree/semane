@@ -56,18 +56,18 @@ export const PROJECTS: Project[] = [
 
 export const SERVICES: Service[] = [
   {
-    title: "Sites Web Professionnels",
-    description: "Des sites vitrines modernes et performants pour booster votre présence en ligne.",
+    title: "Sites Web Haute-Performance",
+    description: "Conception de sites vitrines modernes qui captent l'attention et convertissent vos visiteurs en clients fidèles.",
     icon: <Globe className="w-6 h-6" />
   },
   {
-    title: "Mini-Applications Web",
-    description: "Des outils internes ou SaaS spécifiques à vos besoins métiers, développés en un temps record.",
+    title: "MVP & SaaS sur Mesure",
+    description: "Lancez votre produit digital en un temps record pour valider votre marché et générer vos premiers revenus sans attendre.",
     icon: <Zap className="w-6 h-6" />
   },
   {
-    title: "Solutions No-Code & IA",
-    description: "Optimisation de vos processus grâce aux meilleurs outils du marché pour une agilité maximale.",
+    title: "Automatisation & IA Stratégique",
+    description: "Boostez votre productivité et réduisez vos coûts opérationnels en intégrant l'IA et le No-Code au cœur de votre business.",
     icon: <Layers className="w-6 h-6" />
   }
 ];
