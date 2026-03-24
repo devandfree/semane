@@ -102,7 +102,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-zinc-900 dark:text-white mb-8 font-display leading-[0.9]"
           >
-            Transformez vos idées en <span className="text-gradient">réalités rentables.</span>
+            Transformez vos idées en <span className="text-gradient">produits rentables.</span>
           </motion.h1>
           
           <motion.p 
