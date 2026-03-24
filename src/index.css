@@ -12,6 +12,10 @@
 @variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
   body {
     @apply transition-colors duration-300 antialiased;
   }

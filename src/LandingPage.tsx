@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Phone, 
   ExternalLink, 
@@ -35,9 +35,24 @@ const staggerContainer = {
   }
 };
 
+const SectionReveal = ({ children, id, className }: { children: React.ReactNode; id?: string; className?: string }) => {
+  return (
+    <motion.section
+      id={id}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className={className}
+    >
+      {children}
+    </motion.section>
+  );
+};
+
 const Hero = () => {
   return (
-    <section id="home" className="pt-32 pb-20 px-4 overflow-hidden relative">
+    <section id="home" className="pt-48 pb-20 px-4 overflow-hidden relative">
       <div className="absolute inset-0 bg-grid -z-10" />
       <div className="max-w-7xl mx-auto relative">
         {/* Background Decorative Elements */}
@@ -130,7 +145,7 @@ const Hero = () => {
 
 const Services = () => {
   return (
-    <section id="services" className="py-32 px-4 relative overflow-hidden">
+    <SectionReveal id="services" className="py-32 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -171,7 +186,7 @@ const Services = () => {
           ))}
         </motion.div>
       </div>
-    </section>
+    </SectionReveal>
   );
 };
 
@@ -180,7 +195,7 @@ const Projects = () => {
   const featuredProjects = PROJECTS.slice(0, 3);
 
   return (
-    <section id="projects" className="py-32 px-4 relative">
+    <SectionReveal id="projects" className="py-32 px-4 relative">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -250,7 +265,7 @@ const Projects = () => {
           </Link>
         </motion.div>
       </div>
-    </section>
+    </SectionReveal>
   );
 };
 
@@ -274,7 +289,7 @@ const Process = () => {
   ];
 
   return (
-    <section id="process" className="py-20 px-4">
+    <SectionReveal id="process" className="py-32 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -314,7 +329,7 @@ const Process = () => {
           ))}
         </div>
       </div>
-    </section>
+    </SectionReveal>
   );
 };
 
@@ -369,7 +384,7 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-20 px-4">
+    <SectionReveal id="faq" className="py-32 px-4">
       <div className="max-w-3xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -418,13 +433,14 @@ const FAQ = () => {
           ))}
         </div>
       </div>
-    </section>
+    </SectionReveal>
   );
 };
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-secondary dark:bg-zinc-950 text-white px-4">
+    <SectionReveal id="contact" className="py-32 bg-secondary dark:bg-zinc-950 text-white px-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-10 -z-10" />
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -497,7 +513,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </SectionReveal>
   );
 };
 
