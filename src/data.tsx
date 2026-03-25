@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Globe, Zap, Layers } from 'lucide-react';
+import { Globe, Zap, Layers, Briefcase } from 'lucide-react';
 
 export interface Project {
   title: string;
@@ -69,5 +69,10 @@ export const SERVICES: Service[] = [
     title: "Automatisation & IA Stratégique",
     description: "Boostez votre productivité et réduisez vos coûts opérationnels en intégrant l'IA et le No-Code au cœur de votre business.",
     icon: <Layers className="w-6 h-6" />
+  },
+  {
+    title: "Conseil & Accompagnement Logiciel",
+    description: "Expertise stratégique pour le choix et l'implémentation de solutions logicielles adaptées aux besoins spécifiques des PME.",
+    icon: <Briefcase className="w-6 h-6" />
   }
 ];
