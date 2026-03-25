@@ -33,24 +33,6 @@ export const PROJECTS: Project[] = [
     description: "Cabinet de soins dentaire ultra moderne et nouvelle génération.",
     link: "https://sourire-sante.vercel.app",
     tags: ["Santé", "Moderne", "Web"]
-  },
-  {
-    title: "EcoTrack",
-    description: "Solution de suivi d'empreinte carbone pour les entreprises industrielles.",
-    link: "#",
-    tags: ["Écologie", "B2B", "Dashboard"]
-  },
-  {
-    title: "FitFlow",
-    description: "Application mobile de coaching sportif personnalisé avec IA.",
-    link: "#",
-    tags: ["Mobile", "IA", "Fitness"]
-  },
-  {
-    title: "LuxeStay",
-    description: "Plateforme de réservation de villas de luxe avec conciergerie intégrée.",
-    link: "#",
-    tags: ["Voyage", "Luxe", "Booking"]
   }
 ];
 

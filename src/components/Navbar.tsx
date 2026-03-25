@@ -90,7 +90,7 @@ const Navbar = ({ isDark, toggleTheme }: { isDark: boolean; toggleTheme: () => v
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 overflow-hidden"
+            className="md:hidden bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl border-t border-zinc-200 dark:border-zinc-800 overflow-hidden rounded-b-2xl"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {isHomePage ? navLinks.map((link) => (
@@ -98,18 +98,27 @@ const Navbar = ({ isDark, toggleTheme }: { isDark: boolean; toggleTheme: () => v
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-4 text-base font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary"
+                  className="block px-3 py-4 text-base font-bold text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors border-b border-zinc-100 dark:border-zinc-900 last:border-none"
                 >
                   {link.name}
                 </a>
               )) : (
-                <Link
-                  to="/"
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-4 text-base font-medium text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary"
-                >
-                  Retour à l'accueil
-                </Link>
+                <>
+                  <Link
+                    to="/"
+                    onClick={() => setIsOpen(false)}
+                    className="block px-3 py-4 text-base font-bold text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors border-b border-zinc-100 dark:border-zinc-900"
+                  >
+                    Retour à l'accueil
+                  </Link>
+                  <Link
+                    to="/projects"
+                    onClick={() => setIsOpen(false)}
+                    className="block px-3 py-4 text-base font-bold text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors"
+                  >
+                    Réalisations
+                  </Link>
+                </>
               )}
             </div>
           </motion.div>
