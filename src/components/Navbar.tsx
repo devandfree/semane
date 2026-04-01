@@ -16,7 +16,6 @@ const Navbar = ({ isDark, toggleTheme }: { isDark: boolean; toggleTheme: () => v
   });
 
   const navLinks = [
-    { name: 'Accueil', href: isHomePage ? '#home' : '/#home' },
     { name: 'À propos', href: isHomePage ? '#about' : '/#about' },
     { name: 'Services', href: isHomePage ? '#services' : '/#services' },
     { name: 'Méthode', href: isHomePage ? '#process' : '/#process' },
@@ -33,16 +32,20 @@ const Navbar = ({ isDark, toggleTheme }: { isDark: boolean; toggleTheme: () => v
       />
       <div className="px-6">
         <div className="flex justify-between h-16 items-center">
-          <Link to="/" className="flex-shrink-0 flex items-center">
+          <Link 
+            to="/" 
+            onClick={(e) => {
+              if (isHomePage) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+            className="flex-shrink-0 flex items-center"
+          >
             <span className="text-2xl font-bold text-primary font-display tracking-tight">semane<span className="text-secondary dark:text-accent">.</span></span>
           </Link>
           
           <div className="hidden md:flex items-center space-x-6">
-            {!isHomePage && (
-              <Link to="/" className="text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors font-bold flex items-center mr-4 text-sm uppercase tracking-wider">
-                <ArrowLeft size={16} className="mr-2" /> Accueil
-              </Link>
-            )}
             {isHomePage && navLinks.map((link, i) => (
               <motion.a 
                 key={link.name} 
@@ -105,13 +108,6 @@ const Navbar = ({ isDark, toggleTheme }: { isDark: boolean; toggleTheme: () => v
                 </a>
               )) : (
                 <>
-                  <Link
-                    to="/"
-                    onClick={() => setIsOpen(false)}
-                    className="block px-3 py-4 text-base font-bold text-zinc-600 dark:text-zinc-300 hover:text-primary dark:hover:text-primary transition-colors border-b border-zinc-100 dark:border-zinc-900"
-                  >
-                    Retour à l'accueil
-                  </Link>
                   <Link
                     to="/projects"
                     onClick={() => setIsOpen(false)}
