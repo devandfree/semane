@@ -36,7 +36,7 @@ export default function ProjectsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-24"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-8 font-display tracking-tight">Toutes mes <span className="text-gradient">réalisations</span></h1>
+            <h1 className="text-5xl md:text-7xl font-bold text-zinc-900 dark:text-white mb-8 font-display tracking-tight">Toutes mes réalisations</h1>
             <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto text-xl leading-relaxed">
               Découvrez l'ensemble des produits que j'ai conçus et lancés. Chaque réalisation est le fruit d'une collaboration étroite pour transformer une idée en un produit performant.
             </p>

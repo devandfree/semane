@@ -102,7 +102,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-zinc-900 dark:text-white mb-8 font-display leading-[0.9]"
           >
-            Transformez vos idées en <span className="text-gradient">produits rentables.</span>
+            Transformez vos idées en produits rentables.
           </motion.h1>
           
           <motion.p 
@@ -174,7 +174,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-8 font-display">
-              À propos de <span className="text-gradient">moi</span>
+              À propos de moi
             </h2>
             <div className="space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
               <p>

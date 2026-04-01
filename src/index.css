@@ -26,10 +26,6 @@
     @apply bg-white/10 dark:bg-zinc-900/10 backdrop-blur-xl border border-white/20 dark:border-white/10;
   }
   
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary dark:to-accent;
-  }
-
   .bg-grid {
     background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 0);
     background-size: 40px 40px;
