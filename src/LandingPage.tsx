@@ -143,6 +143,64 @@ const Hero = () => {
   );
 };
 
+const About = () => {
+  return (
+    <SectionReveal id="about" className="py-32 px-4 bg-zinc-50 dark:bg-zinc-900/30">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 aspect-square">
+              <img 
+                src="/profil.jpg" 
+                alt="Steve Emane" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            {/* Decorative elements */}
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10" />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary/20 rounded-full blur-3xl -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-primary/10 rounded-full -z-10 animate-pulse" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-white mb-8 font-display">
+              À propos de <span className="text-gradient">moi</span>
+            </h2>
+            <div className="space-y-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              <p>
+                Passionné par la création de produits digitaux, j'accompagne les entrepreneurs et les entreprises dans la transformation de leurs idées en solutions concrètes et rentables.
+              </p>
+              <p>
+                Mon approche repose sur l'utilisation stratégique du <span className="text-primary font-bold">No-Code</span> et de l'<span className="text-secondary dark:text-accent font-bold">Intelligence Artificielle</span>. Cette combinaison me permet de construire des produits robustes, scalables et esthétiques en une fraction du temps requis par le développement traditionnel.
+              </p>
+              <p>
+                Que vous ayez besoin d'un MVP (Minimum Viable Product) pour tester votre marché ou d'une application métier complexe pour automatiser vos processus, je mets mon expertise à votre service pour garantir un lancement réussi et un ROI optimal.
+              </p>
+            </div>
+            
+            <div className="mt-10 flex flex-wrap gap-4">
+              <div className="px-6 py-3 rounded-2xl glass border-primary/20 flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary animate-ping" />
+                <span className="font-bold text-zinc-900 dark:text-white">Disponible pour de nouveaux projets</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </SectionReveal>
+  );
+};
+
 const Services = () => {
   return (
     <SectionReveal id="services" className="py-32 px-4 relative overflow-hidden">
@@ -593,6 +651,7 @@ export default function LandingPage() {
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
       <main>
         <Hero />
+        <About />
         <TechStack />
         <Services />
         <Process />

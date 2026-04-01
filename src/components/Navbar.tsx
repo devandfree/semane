@@ -17,6 +17,7 @@ const Navbar = ({ isDark, toggleTheme }: { isDark: boolean; toggleTheme: () => v
 
   const navLinks = [
     { name: 'Accueil', href: isHomePage ? '#home' : '/#home' },
+    { name: 'À propos', href: isHomePage ? '#about' : '/#about' },
     { name: 'Services', href: isHomePage ? '#services' : '/#services' },
     { name: 'Méthode', href: isHomePage ? '#process' : '/#process' },
     { name: 'Réalisations', href: isHomePage ? '#projects' : '/#projects' },
