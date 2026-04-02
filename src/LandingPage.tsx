@@ -156,7 +156,7 @@ const About = () => {
           >
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-primary/20 aspect-square">
               <img 
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800&h=800" 
+                src="https://www.hebergeur-image.com/upload/143.105.152.147-69cde7ebd1087.jpg" 
                 alt="Programmation et ordinateur" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
